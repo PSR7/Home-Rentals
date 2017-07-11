@@ -1,0 +1,101 @@
+<!doctype HTML >
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Houses for Rental</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body ng-app="Hrentals" ng-controller="Hrentalscontroller">
+        <! -- Nav Bar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Houses &amp; Rooms for Rent</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Min and Max Pricce Selection -->
+        <div class="container">
+        <div class="col-sm-12 price-form">
+        <div class="col-sm-6">
+            <div class="input-group">
+                <span class="input-group-addonn">Min Price</span>
+                <select name="minprice" id="minprice" ng-model="priceInfo.min" class="form-control">
+                    <option value="100">$100</option>
+                    <option value="200">$200</option>
+                    <option value="300">$300</option>
+                    <option value="400">$400</option>
+                    <option value="500">$500</option>
+                    <option value="600">$600</option>
+                    <option value="700">$700</option>
+                    <option value="800">$800</option>
+                    <option value="900">$900</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="input-group">
+            <span class="input-group-addonn">Max Price</span>
+            <select name="maxprice" id="maxprice" ng-model="priceInfo.max" class="form-control">
+                <option value="100">$100</option>
+                <option value="200">$200</option>
+                <option value="300">$300</option>
+                <option value="400">$400</option>
+                <option value="500">$500</option>
+                <option value="600">$600</option>
+                <option value="700">$700</option>
+                <option value="800">$800</option>
+                <option value="900">$900</option>
+            </select>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+        
+        <!-- Rooms Avialable -->
+        <div class="container" > 
+            <div class="col-sm-4" ng-repeat = "rental in rentals | rentalFilter:priceInfo" >
+                <div class="thumbnail">
+                    <img ng-src="Images/{{rental.image}}.jpg" alt="">
+                    <div class="caption">
+                        <div ng-hide="showDetails === true">
+                        <h3><i class="glyphicon glyphicon-tag"></i> {{rental.price | currency}} </h3>
+                        <h4><i class="glyphicon glyphicon-home"></i> {{rental.description}} <br>
+                            <span class="label label-primary label-sm"> {{rental.type}} </span>
+                        </h4>
+                    </div>
+                        <button class="btn btn-xs btn-success"
+                                ng-hide="showDetails ===true"
+                                ng-click="showDetails= !showDetails">
+                                Details
+                        </button>
+                        <button class="btn btn-xs btn-danger"
+                                ng-show="showDetails === true"
+                                ng-click="showDetails = !showDetails">
+                                Close
+                        </button>
+                        <div class="details" ng-show="showDetails === true">
+                            <h4>
+                                <span class="label label-primary">Beds: {{rental.details.bedrooms}}</span>
+                                <span class="label label-primary">Baths: {{rental.details.bathrooms}}</span>
+                                <span class="label label-primary">Sqft: {{rental.details.area}}</span>
+                            </h4>
+                            <p>{{rental.address}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="app.js"></script>
+    <script src="Scripts/HrentalsController.js"></script>
+    <script src="Scripts/HrentalsFactory.js" ></script>
+    <script src="Scripts/HrentalsFilter.js"></script>
+</html>
