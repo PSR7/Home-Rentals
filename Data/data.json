@@ -1,7 +1,9 @@
 [
             {
                 "id": 1,
-                "type" : "Entire Home",
+                "propertyType" : {
+                   "type": "Entire Home" 
+                },
                 "price": 308,
                 "address": "College Station, TX, United States ",
                 "description": "Schiller Silver Oak Lakeside A&M",
@@ -14,7 +16,9 @@
             },
             {
                 "id": 2,
-                "type" : "Private Room",
+                "propertyType" : {
+                   "type": "Private Room" 
+                },
                 "price": 315,
                 "address": "Austin, TX, United States",
                 "description": "Lavishly appointed master bed/bath",
@@ -27,7 +31,9 @@
             },
             {
                 "id": 3,
-                "type" : "Shared Room",
+                "propertyType" : {
+                   "type": "Shared Room" 
+                },
                 "price": 308,
                 "address": "Dallas, TX, United States",
                 "description": "Modern smart home",
@@ -40,7 +46,9 @@
             },
              {
                 "id": 4,
-                "type" : "Entire Home",
+                "propertyType" : {
+                   "type": "Entire Home" 
+                },
                 "price": 399,
                 "address": "Austin, TX, United States",
                 "description": "The cottage is super clean, comfy",
@@ -53,7 +61,9 @@
             },
              {
                 "id": 5,
-                "type" : "Shared Room",
+                "propertyType" : {
+                   "type": "Shared Room" 
+                },
                 "price": 124,
                 "address": "Hutto, TX, United States",
                 "description": "Shared Space in 4BR House",
@@ -66,7 +76,9 @@
             },
              {
                 "id": 6,
-                "type" : "Entire Home",
+                "propertyType" : {
+                   "type": "Entire Home" 
+                },
                 "price": 805,
                 "address": "Dallas, TX, United States",
                 "description": "Modern Tudor in the Heart of Dallas",
@@ -80,7 +92,9 @@
             
             {
                 "id": 7,
-                "type" : "Shared Room",
+                "propertyType" : {
+                   "type": "Shared Room" 
+                },
                 "price": 117,
                 "address": "Dallas, TX, United States",
                 "description": "Comfy Futon In Living Room",
@@ -93,7 +107,9 @@
             },
             {
                 "id": 8,
-                "type" : "Private Room",
+                "propertyType" : {
+                   "type": "Private Room" 
+                },
                 "price": 315,
                 "address": "Austin, TX, United States",
                 "description": "Lavishly appointed master bed/bath",
@@ -106,7 +122,9 @@
             },
             {
                 "id": 9,
-                "type" : "Private Room",
+                "propertyType" : {
+                   "type": "Private Room" 
+                },
                 "price": 450,
                 "address": "Austin, TX, United States",
                 "description": "MODERN guest room in NEW home",

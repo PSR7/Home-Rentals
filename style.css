@@ -633,18 +633,26 @@ input.ng-valid.ng-touched {
   padding-bottom: 10px;
 }
 
-
 .price-form{
     margin-bottom:  10px;
     padding: 15px;
-    background-color: #5cb85c;
+    color: white;
+    text-overflow: ellipsis;
+    background-color: #1B7998;
+    border-radius:7px;
+    border: 1px solid #DBDBDB;
+   box-shadow: 0 2px 3px rgba(0,0,0,.1);;
+    display: table ;
+    table-layout: fixed;
+    font-size: 1.2em;
+    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+filter: alpha(opacity=70);  /* IE 5-7 */
+-moz-opacity: 0.7;          /* Netscape */
+-khtml-opacity: 0.7;        /* Safari 1.x */
+opacity: 0.7;  
 }
 
-.price-form{
-    margin-bottom:10px;
-    padding: 15px;
-    background-color:  #5cb85c;
-}
 
 .price-form-row{
     margin-bottom: 10px;
@@ -666,6 +674,8 @@ input.ng-valid.ng-touched {
     font-size: 18px;
     line-height: 20px;
 }
+
+
 
 
 .alignment{

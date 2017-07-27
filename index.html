@@ -1,12 +1,6 @@
-<body ng-app="Hrentals" ng-controller="Hrentalscontroller">
-       
-<div class="page">
-    
-        <!-- Min and Max Pricce Selection -->
-        <div class="container" >
-        <div class="col-sm-12 price-form" >
-            <div class="row price-form-row" ng-if="!addListing">
-        <div class="col-sm-6">
+<div class="container">
+        <div class="col-sm-12 price-form">
+        <div class="col-sm-4">
             <div class="input-group">
                 <span class="input-group-addonn">Min Price</span>
                 <select name="minprice" id="minprice" ng-model="priceInfo.min" class="form-control">
@@ -22,7 +16,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="input-group">
             <span class="input-group-addonn">Max Price</span>
             <select name="maxprice" id="maxprice" ng-model="priceInfo.max" class="form-control">
@@ -38,26 +32,17 @@
             </select>
             </div>
         </div>
-        </div>
-        
-        </div>
-        
-        
-      
+             <div class="col-sm-4">
+            <div class="input-group">
+            <span class="input-group-addonn">Rooms</span>
+            <select  ng-model="roomtype" class="form-control">
+                <option value="propertyType.type">Entire Home</option>
+			    <option value="propertyType.type">Private Room</option>
+			    <option value="propertyType.type">Shared Room</option>
+            </select>
             </div>
         </div>
-        
-    </body>
-    <script src="Scripts/Lib/angular.min.js"></script>
-    <script src="Scripts/Lib/angular-route.min.js"></script>
-    <script src="Scripts/Lib/angular-animate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>    
-    <script src="app.js"></script>
-    <script src="Scripts/registration.js"></script>
-    <script src="Scripts/HrentalsController.js"></script>
-    <script src="Scripts/addFactory.js"></script>
-    <script src="Scripts/addcontroller.js"></script>
-    <script src="Scripts/HrentalsFactory.js" ></script>
-    <script src="Scripts/service.js" ></script>
-    <script src="Scripts/HrentalsFilter.js"></script>
-    <script src="Scripts/success.js"></script>
+        </div>
+        </div>
+
+<nav  ng-include="'views/available.html'"></nav>

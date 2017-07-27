@@ -1,5 +1,5 @@
 angular.module('Hrentals')
-       .factory('rentalFactory', function($http){
+       .factory('rentalFactory1', function($http){
     
     function getRentals (){
         return $http.get('../data/data1.json');

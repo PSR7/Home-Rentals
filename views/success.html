@@ -1,8 +1,6 @@
 <!doctype HTML >
 
-    <body ng-app="Hrentals" ng-controller="Hrentalscontroller">
-       
-<div class="page">
+<div class="page" ng-controller="addcontroller">
 
   <div class="userinfo" ng-show="currentUser" ng-controller="RegistrationController">
     <span class="userinfo">Hi {{currentUser.firstname}}</span>
@@ -13,9 +11,6 @@
         <!-- Min and Max Pricce Selection -->
         <div class="container" >
         <div class="col-sm-12 price-form" >
-        
-        
-          
 
 		      <div class="listing-form" >
 
@@ -46,13 +41,13 @@
 
 		          <div class="col-sm-4">
 		            <div class="input-group">
-		              <span class="input-group-addon">Property Type</span>
+		              <span class="input-group-addon">House Type</span>
 		              <select 
 		              	type="select" 
 		              	name="propertyType" 
 		              	id="propertyType" 
 		              	class="form-control" 
-		              	ng-model="newListing.type">
+		              	ng-model="newListing.propertyType.type">
 			                <option value="EntireHome">Entire Home</option>
 			                <option value="PrivateRoom">Private Room</option>
 			                <option value="SharedRoom">Shared Room</option>
@@ -153,7 +148,7 @@
 	               	name="propertyType"
 	               	id="propertyType" 
 	               	class="form-control" 
-	               	ng-model="existingListing.type">
+	               	ng-model="existingListing.propertyType.type">
 	      	           <option value="EntireHome">Entire Home</option>
 	      	           <option value="PrivateRoom">Private Room</option>
 	      	           <option value="SharedRoom">Shared Room</option>
@@ -226,53 +221,13 @@
 
 	           </div>
 
+            
 		  </div>
           
         </div>
-        
-        
-        <!-- Rooms Avialable -->
-        <div class="container"  > 
-            <div class="col-sm-4" ng-repeat = "rental in rentals " >
-                <div class="thumbnail">
-                    <img ng-src="../Images/{{rental.image}}.jpg" alt="">
-                    <div class="caption">
-                        <div ng-hide="showDetails === true">
-                        <h3><i class="glyphicon glyphicon-tag"></i> {{rental.price | currency}} </h3>
-                        <h4><i class="glyphicon glyphicon-home"></i> {{rental.description}} <br>
-                            <span class="label label-primary label-sm"> {{rental.type}} </span>
-                        </h4>
-                    </div>
-                        <button class="btn btn-xs btn-success"
-                                ng-hide="showDetails ===true"
-                                ng-click="showDetails= !showDetails">
-                                Details
-                        </button>
-                        <button class="btn btn-xs btn-primary" 
-                                ng-show="showDetails" 
-                                ng-click="editRental(rental)">Edit
-                        </button>
-                        
-                        <button class="btn btn-xs btn-danger"
-                                ng-show="showDetails === true"
-                                ng-click="showDetails = !showDetails">
-                                Close
-                        </button>
-                        <div class="details" ng-show="showDetails === true">
-                            <h4>
-                                <span class="label label-primary">Beds: {{rental.details.bedrooms}}</span>
-                                <span class="label label-primary">Baths: {{rental.details.bathrooms}}</span>
-                                <span class="label label-primary">Sqft: {{rental.details.area}}</span>
-                            </h4>
-                            <p>{{rental.address}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-            </div>
-        </div>
-</body>
-        
+
+    </div>
+            <nav  ng-include="'views/available.html'"></nav>
+
+</div>
     
